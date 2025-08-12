@@ -12,7 +12,7 @@ body {
 }
 
 
-/* NAVIGATION */
+/* NAV */
 
 nav {
     background-color: #1e3d59;
@@ -37,7 +37,7 @@ nav a:hover {
 }
 
 
-/* A4 PAPPER STYLE */
+/* A4 papper still */
 
 .container {
     width: 210mm;
@@ -47,9 +47,6 @@ nav a:hover {
     padding: 30px 40px;
     box-shadow: 0 35px 55px rgba(0, 0, 0, 0.3);
 }
-
-
-/* SECTIONS */
 
 .section {
     margin-bottom: 40px;
@@ -66,9 +63,6 @@ p {
     line-height: 1.6;
 }
 
-
-/* PROFILE IMAGE */
-
 .profile-img {
     text-align: center;
 }
@@ -79,9 +73,6 @@ p {
     object-fit: cover;
     border-radius: 50%;
 }
-
-
-/* CONTACT INFO */
 
 ul {
     list-style: none;
@@ -109,4 +100,44 @@ p {
     /* Lite större luft efter stycken */
     line-height: 1.6;
     /* Gör texten mer lättläst */
+}
+
+.thumbnail {
+    width: 100px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.thumbnail:hover {
+    transform: scale(1.1);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80%;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
 }

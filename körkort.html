@@ -20,10 +20,27 @@
 
     <div class="container">
         <h2>Körkort</h2>
-        <img src="truck.1.jpg" width="400" height="300">
+        <img src="Truckkörkort1.jpg" alt="Truck 1" class="thumbnail" onclick="openModal(this.src)">
+        <a href="CV_Robert_Csikos 2.pdf" download class="download-btn">📄 Ladda ner mitt CV</a>
 
-        <img src="truck.2.jpg" width="400" height="300">
     </div>
+
+    <!-- Modal för stor bild -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script>
+        function openModal(src) {
+            document.getElementById("myModal").style.display = "block";
+            document.getElementById("modalImage").src = src;
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+    </script>
 
 </body>
 
