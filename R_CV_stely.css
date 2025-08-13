@@ -141,3 +141,20 @@ p {
     font-weight: bold;
     cursor: pointer;
 }
+
+.download-btn {
+    display: inline-block;
+    background-color: #007BFF;
+    /* Blå färg */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #0056b3;
+    /* Mörkare blå vid hover */
+}
