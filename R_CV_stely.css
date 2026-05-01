@@ -9,6 +9,12 @@
 body {
     background: #e6f0fa;
     min-height: 100vh;
+    overflow-x: hidden;
+}
+
+img,
+iframe {
+    max-width: 100%;
 }
 
 
@@ -18,8 +24,10 @@ nav {
     background-color: #1e3d59;
     color: white;
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
-    gap: 30px;
+    gap: 12px 30px;
     padding: 15px;
     position: sticky;
     top: 0;
@@ -30,6 +38,7 @@ nav a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    white-space: nowrap;
 }
 
 nav a:hover {
@@ -40,12 +49,13 @@ nav a:hover {
 /* A4 papper still */
 
 .container {
-    width: 210mm;
+    width: min(210mm, calc(100% - 32px));
     min-height: 297mm;
     background: #fff;
     margin: 20px auto;
     padding: 30px 40px;
     box-shadow: 0 35px 55px rgba(0, 0, 0, 0.3);
+    overflow-wrap: break-word;
 }
 
 .section {
@@ -56,6 +66,11 @@ h2,
 h3,
 h4 {
     color: #1e3d59;
+}
+
+h1 {
+    color: #1e3d59;
+    margin-bottom: 16px;
 }
 
 p {
@@ -157,4 +172,106 @@ p {
 .download-btn:hover {
     background-color: #0056b3;
     /* Mörkare blå vid hover */
+}
+
+.contact-list a {
+    overflow-wrap: anywhere;
+}
+
+.map-container iframe {
+    display: block;
+}
+
+@media (max-width: 720px) {
+    nav {
+        position: static;
+        justify-content: flex-start;
+        gap: 8px;
+        padding: 10px;
+    }
+
+    nav a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 38px;
+        padding: 6px 8px;
+        border-radius: 4px;
+        background: rgba(255, 255, 255, 0.08);
+        font-size: 0.92rem;
+    }
+
+    .download-btn {
+        justify-content: center;
+        flex-basis: 100%;
+        padding: 8px 10px;
+    }
+
+    .container {
+        width: calc(100% - 24px);
+        min-height: auto;
+        margin: 12px auto;
+        padding: 22px 18px;
+        box-shadow: 0 16px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .profile-img img {
+        width: 120px;
+        height: 120px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    h2,
+    h3 {
+        font-size: 1.35rem;
+    }
+
+    h4 {
+        font-size: 1rem;
+    }
+
+    p,
+    li {
+        font-size: 0.98rem;
+    }
+
+    .thumbnail {
+        width: min(160px, 70vw);
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        background: #fff;
+    }
+
+    .container {
+        width: 100%;
+        margin: 0;
+        padding: 20px 16px;
+        box-shadow: none;
+    }
+
+    nav a {
+        font-size: 0.88rem;
+    }
+}
+
+@media print {
+    body {
+        background: #fff;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .container {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 0;
+        box-shadow: none;
+    }
 }
